@@ -28,7 +28,8 @@ class InfluxData {
   }
 
   String toString() const { return _measurement + _tags + _values + _timestamp; }
-
+  size_t serializedSize() { return String(_measurement + _tags + _values + _timestamp).length(); }
+  
  private:
   String _measurement;
   String _tags;
